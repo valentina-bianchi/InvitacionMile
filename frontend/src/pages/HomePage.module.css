@@ -1,0 +1,266 @@
+.container {
+  min-height: 100vh;
+  height: 100vh;
+  background-image: url('/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  scroll-snap-align: start;
+}
+
+/* Efecto bloom en la imagen de fondo */
+.container::after {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  background-image: url('/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(20px) brightness(1.2);
+  opacity: 0.6;
+  z-index: 0;
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.content {
+  max-width: 42rem;
+  width: 100%;
+  text-align: center;
+  background-color: #f7e7ce;
+  padding: 4rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 2;
+}
+
+@media (min-width: 768px) {
+  .content {
+    padding: 5rem 3rem;
+  }
+}
+
+.starsTop {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.star {
+  font-size: 1.5rem;
+  color: rgba(139, 111, 71, 0.6);
+}
+
+.titleContainer {
+  margin-bottom: 3rem;
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: 400;
+  color: #6b4e3d;
+  margin-bottom: 0;
+  font-family: 'Great Vibes', 'Dancing Script', cursive;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  text-transform: none;
+  font-style: normal;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 5.5rem;
+  }
+}
+
+.dateContainer {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+  .dateContainer {
+    gap: 1.5rem;
+  }
+}
+
+.dayMonth {
+  color: #8b6f47;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  .dayMonth {
+    font-size: 1.75rem;
+  }
+}
+
+.dateCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dateNumberContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 0.5rem 0;
+}
+
+.dateLine {
+  width: 1px;
+  height: 2.5rem;
+  background-color: #8b6f47;
+}
+
+@media (min-width: 768px) {
+  .dateLine {
+    height: 4rem;
+  }
+}
+
+.dateNumber {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #6b4e3d;
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+@media (min-width: 768px) {
+  .dateNumber {
+    font-size: 7rem;
+  }
+}
+
+.monthBelow {
+  color: #8b6f47;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  margin-top: 0.25rem;
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  .monthBelow {
+    font-size: 1.25rem;
+  }
+}
+
+.timeContainer {
+  margin-bottom: 3rem;
+}
+
+.time {
+  font-size: 1.25rem;
+  color: #8b6f47;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  .time {
+    font-size: 1.75rem;
+  }
+}
+
+.nameContainer {
+  margin-top: 4rem;
+}
+
+.name {
+  font-size: 4rem;
+  font-weight: 400;
+  color: #6b4e3d;
+  font-family: 'Great Vibes', 'Dancing Script', cursive;
+  font-style: normal;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+}
+
+@media (min-width: 768px) {
+  .name {
+    font-size: 6rem;
+  }
+}
+
+.starsBottom {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 2.5rem;
+}
+
+.arrowDown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  margin: 2rem auto 0;
+  color: #8b6f47;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  background-color: rgba(247, 231, 206, 0.3);
+}
+
+.arrowDown:hover {
+  color: #6b4e3d;
+  transform: translateY(5px);
+  background-color: rgba(247, 231, 206, 0.5);
+}
+
+.arrowDown svg {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+

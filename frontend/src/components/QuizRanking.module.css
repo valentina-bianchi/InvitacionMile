@@ -1,0 +1,101 @@
+.mountainRanking {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 0.75rem;
+  height: 220px;
+  margin: 1rem 0;
+  padding: 0 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .mountainRanking {
+    gap: 1rem;
+    height: 250px;
+  }
+}
+
+.mountainPeak {
+  flex: 1;
+  max-width: 150px;
+  background: linear-gradient(
+    to top,
+    #8b6f47 0%,
+    #a6896b 50%,
+    #c4a882 100%
+  );
+  border-radius: 1rem 1rem 0 0;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(139, 111, 71, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.mountainPeak:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(139, 111, 71, 0.4);
+}
+
+.peakContent {
+  padding: 0.75rem 0.5rem;
+  text-align: center;
+  width: 100%;
+  background-color: rgba(247, 231, 206, 0.95);
+  border-radius: 0.75rem 0.75rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.crown {
+  font-size: 1.25rem;
+  margin-bottom: 0.125rem;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.position {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #6b4e3d;
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+}
+
+.name {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #6b4e3d;
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  word-break: break-word;
+  line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+  .name {
+    font-size: 0.875rem;
+  }
+}
+
+.score {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #8b6f47;
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+}
+
+@media (min-width: 768px) {
+  .score {
+    font-size: 1.125rem;
+  }
+}
+

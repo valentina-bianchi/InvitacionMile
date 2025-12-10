@@ -1,0 +1,242 @@
+.container {
+  min-height: 100vh;
+  height: 100vh;
+  background-image: url('/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  scroll-snap-align: start;
+  overflow-y: auto;
+}
+
+/* Efecto bloom en la imagen de fondo */
+.container::after {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  background-image: url('/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(20px) brightness(1.2);
+  opacity: 0.6;
+  z-index: 0;
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.content {
+  max-width: 50rem;
+  width: 100%;
+  text-align: center;
+  background-color: #f7e7ce;
+  padding: 2rem 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 2;
+}
+
+@media (min-width: 768px) {
+  .content {
+    padding: 2.5rem 2rem;
+  }
+}
+
+.starsTop {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.star {
+  font-size: 1.5rem;
+  color: rgba(139, 111, 71, 0.6);
+}
+
+.titleContainer {
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #6b4e3d;
+  font-family: 'Great Vibes', 'Dancing Script', cursive;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+}
+
+.rankingContainer {
+  margin: 1rem 0;
+}
+
+.rankingTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #6b4e3d;
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  margin-bottom: 1rem;
+}
+
+.loading,
+.noScores {
+  font-size: 1rem;
+  color: #8b6f47;
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  padding: 2rem;
+}
+
+.buttonContainer {
+  margin: 1.5rem 0;
+}
+
+.playButton {
+  background-color: #8b6f47;
+  color: #f7e7ce;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  letter-spacing: 0.05em;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(139, 111, 71, 0.3);
+}
+
+.playButton:hover {
+  background-color: #6b4e3d;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(139, 111, 71, 0.4);
+}
+
+.playButton:active {
+  transform: translateY(0) scale(1);
+}
+
+.nameFormContainer {
+  margin: 2rem 0;
+  text-align: left;
+}
+
+.formTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #6b4e3d;
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.nameForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #6b4e3d;
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+}
+
+.input {
+  padding: 0.75rem 1rem;
+  border: 2px solid #d4c4a8;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  color: #6b4e3d;
+  background-color: #fff;
+  transition: border-color 0.3s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #8b6f47;
+}
+
+.input::placeholder {
+  color: #b8a082;
+}
+
+.formButtons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.cancelButton,
+.startButton {
+  flex: 1;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cancelButton {
+  background-color: #d4c4a8;
+  color: #6b4e3d;
+}
+
+.cancelButton:hover {
+  background-color: #c4b498;
+}
+
+.startButton {
+  background-color: #8b6f47;
+  color: #f7e7ce;
+}
+
+.startButton:hover {
+  background-color: #6b4e3d;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(139, 111, 71, 0.3);
+}
+
+.starsBottom {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+

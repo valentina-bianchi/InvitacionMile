@@ -1,0 +1,183 @@
+.container {
+  min-height: 100vh;
+  height: 100vh;
+  background-image: url('/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  scroll-snap-align: start;
+}
+
+/* Efecto bloom en la imagen de fondo */
+.container::after {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  background-image: url('/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(20px) brightness(1.2);
+  opacity: 0.6;
+  z-index: 0;
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.content {
+  max-width: 50rem;
+  width: 100%;
+  text-align: center;
+  background-color: #f7e7ce;
+  padding: 4rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 2;
+}
+
+@media (min-width: 768px) {
+  .content {
+    padding: 5rem 3rem;
+  }
+}
+
+.titleContainer {
+  margin-bottom: 3rem;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 400;
+  color: #6b4e3d;
+  font-family: 'Great Vibes', 'Dancing Script', cursive;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 4rem;
+  }
+}
+
+.countdownContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+  .countdownContainer {
+    gap: 1.5rem;
+  }
+}
+
+.timeUnit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.number {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #6b4e3d;
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  line-height: 1;
+  min-width: 60px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .number {
+    font-size: 4.5rem;
+    min-width: 80px;
+  }
+}
+
+.label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #8b6f47;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+}
+
+@media (min-width: 768px) {
+  .label {
+    font-size: 0.875rem;
+  }
+}
+
+.separator {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #6b4e3d;
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  line-height: 1;
+  padding-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .separator {
+    font-size: 3.5rem;
+    padding-bottom: 2rem;
+  }
+}
+
+.arrowDown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  margin: 2rem auto 0;
+  color: #8b6f47;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  background-color: rgba(247, 231, 206, 0.3);
+}
+
+.arrowDown:hover {
+  color: #6b4e3d;
+  transform: translateY(5px);
+  background-color: rgba(247, 231, 206, 0.5);
+}
+
+.arrowDown svg {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+

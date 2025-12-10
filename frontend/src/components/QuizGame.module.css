@@ -1,0 +1,345 @@
+.gameContainer {
+  min-height: 100vh;
+  height: 100vh;
+  background-image: url('/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  scroll-snap-align: start;
+}
+
+.gameContainer::after {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  background-image: url('/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(20px) brightness(1.2);
+  opacity: 0.6;
+  z-index: 0;
+}
+
+.gameContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.gameContent {
+  max-width: 50rem;
+  width: 100%;
+  background-color: #f7e7ce;
+  padding: 2rem 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 2;
+}
+
+@media (min-width: 768px) {
+  .gameContent {
+    padding: 3rem 2.5rem;
+  }
+}
+
+.progressBar {
+  width: 100%;
+  height: 8px;
+  background-color: rgba(139, 111, 71, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #8b6f47 0%, #6b4e3d 100%);
+  transition: width 0.3s ease;
+}
+
+.progressText {
+  text-align: center;
+  font-size: 0.875rem;
+  color: #8b6f47;
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  margin-bottom: 2rem;
+}
+
+.questionContainer {
+  margin-bottom: 2rem;
+}
+
+.question {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #6b4e3d;
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  text-align: center;
+  line-height: 1.4;
+}
+
+@media (min-width: 768px) {
+  .question {
+    font-size: 1.75rem;
+  }
+}
+
+.optionsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.option {
+  padding: 1rem 1.5rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 2px solid #d4c4a8;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #6b4e3d;
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.option:hover:not(:disabled) {
+  background-color: rgba(255, 255, 255, 1);
+  border-color: #8b6f47;
+  transform: translateX(5px);
+}
+
+.option:disabled {
+  cursor: not-allowed;
+}
+
+.option.selected {
+  background-color: rgba(139, 111, 71, 0.2);
+  border-color: #8b6f47;
+}
+
+.option.correct {
+  background-color: rgba(76, 175, 80, 0.2);
+  border-color: #4caf50;
+  color: #2e7d32;
+}
+
+.option.incorrect {
+  background-color: rgba(244, 67, 54, 0.2);
+  border-color: #f44336;
+  color: #c62828;
+}
+
+.checkmark {
+  color: #4caf50;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.cross {
+  color: #f44336;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Resultado */
+.resultContainer {
+  min-height: 100vh;
+  height: 100vh;
+  background-image: url('/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  scroll-snap-align: start;
+}
+
+.resultContainer::after {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  background-image: url('/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(20px) brightness(1.2);
+  opacity: 0.6;
+  z-index: 0;
+}
+
+.resultContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.resultContent {
+  max-width: 50rem;
+  width: 100%;
+  background-color: #f7e7ce;
+  padding: 2rem 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 2;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+@media (min-width: 768px) {
+  .resultContent {
+    padding: 3rem 2.5rem;
+  }
+}
+
+.resultHeader {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.resultTitle {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #6b4e3d;
+  font-family: 'Great Vibes', 'Dancing Script', cursive;
+  margin-bottom: 1.5rem;
+}
+
+.scoreDisplay {
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.scoreLabel {
+  font-size: 0.875rem;
+  color: #8b6f47;
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.scoreValue {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #6b4e3d;
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  margin-bottom: 0.5rem;
+}
+
+.scoreDetails {
+  font-size: 0.875rem;
+  color: #8b6f47;
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+}
+
+.rankingSection {
+  margin-top: 2rem;
+}
+
+.rankingTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #6b4e3d;
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.rankingList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.rankingItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 0.5rem;
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+}
+
+.rankingItem.yourScore {
+  background-color: rgba(139, 111, 71, 0.2);
+  border: 2px solid #8b6f47;
+  font-weight: 600;
+}
+
+.rankPosition {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #8b6f47;
+  min-width: 40px;
+}
+
+.rankName {
+  flex: 1;
+  font-size: 1rem;
+  color: #6b4e3d;
+}
+
+.rankScore {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #6b4e3d;
+}
+
+.playAgainButton {
+  width: 100%;
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  background-color: #8b6f47;
+  color: #f7e7ce;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.playAgainButton:hover {
+  background-color: #6b4e3d;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(139, 111, 71, 0.3);
+}
+
