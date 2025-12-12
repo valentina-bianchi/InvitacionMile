@@ -6,6 +6,7 @@ const ItinerarioPage = () => {
     { hora: '13:00 hs', titulo: 'Almuerzo', iconos: '🍔' },
     { hora: '15:00 hs', titulo: 'Taller de cerámica', iconos: '🎨🪵' },
     { hora: '17:00 hs', titulo: 'Torta y celebración', iconos: '🎂✨' },
+    { hora: '18:30 hs', titulo: 'Cierre y despedida', iconos: '' },
   ];
 
   return (

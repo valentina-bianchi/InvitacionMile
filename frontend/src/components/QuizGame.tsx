@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import styles from './QuizGame.module.css';
 
 interface Question {
@@ -16,53 +16,53 @@ interface QuizGameProps {
 // Preguntas sobre Mile (puedes personalizarlas)
 const questions: Question[] = [
   {
-    question: '¿Cuál es el color favorito de Mile?',
-    options: ['Rosa', 'Azul', 'Verde', 'Amarillo'],
+    question: '¿Cuál/es es el color favorito de Mile?',
+    options: ['Negro y violeta', 'Rosa y azul', 'Verde', 'Gris'],
     correct: 0,
   },
   {
-    question: '¿Qué le gusta hacer a Mile en su tiempo libre?',
-    options: ['Leer', 'Bailar', 'Cocinar', 'Dibujar'],
+    question: '¿Cual/es la/las serie/s fav/s de mile principalmente?',
+    options: ['Re zero', 'Tgcf (heaven official blessing), ons (owari no seraph) y mdzs (mo dao zu shi)', 'Friends y La Casa de Papel', 'Black bluter'],
     correct: 1,
   },
   {
     question: '¿Cuál es la comida favorita de Mile?',
-    options: ['Pizza', 'Sushi', 'Hamburguesa', 'Pasta'],
-    correct: 2,
+    options: ['Pizza', 'Hamburguesa', 'Pasta',  'Sushi'],
+    correct: 3,
   },
   {
     question: '¿Qué deporte practica Mile?',
-    options: ['Fútbol', 'Natación', 'Tenis', 'Voleibol'],
+    options: ['Tenis', 'Natación', 'Basketball', 'Voleibol'],
+    correct: 2,
+  },
+  {
+    question: '¿Cuál es la bebida favorita de Mile?',
+    options: ['Agua', 'Speed', 'Fanta', 'Sprite'],
     correct: 1,
   },
   {
-    question: '¿Cuál es la serie favorita de Mile?',
-    options: ['Friends', 'Stranger Things', 'La Casa de Papel', 'Grey\'s Anatomy'],
+    question: 'La mascota de Mile es un...',
+    options: ['Gato','Perro', 'Conejo', 'Pájaro'],
     correct: 0,
   },
   {
     question: '¿Qué música le gusta más a Mile?',
-    options: ['Pop', 'Rock', 'Reggaeton', 'Indie'],
-    correct: 2,
-  },
-  {
-    question: '¿Cuál es el animal favorito de Mile?',
-    options: ['Perro', 'Gato', 'Conejo', 'Pájaro'],
-    correct: 0,
+    options: ['Pop', 'Rock',  'Reggaeton', 'K-pop y J-pop'],
+    correct: 3,
   },
   {
     question: '¿Qué estación del año prefiere Mile?',
     options: ['Verano', 'Invierno', 'Primavera', 'Otoño'],
+    correct: 1,
+  },
+  {
+    question: '¿Que idioma habla mejor Mile aparte del español?',
+    options: ['Ingles', 'Japones', 'Frances', 'Alemán'],
     correct: 0,
   },
   {
-    question: '¿Cuál es el hobby favorito de Mile?',
-    options: ['Fotografía', 'Pintura', 'Música', 'Deportes'],
-    correct: 2,
-  },
-  {
-    question: '¿Qué le gusta más hacer con sus amigas?',
-    options: ['Ir de compras', 'Ver películas', 'Salir a bailar', 'Hacer deporte'],
+    question: '¿Cual/es son los juegos favoritos de Mile?',
+    options: ['Minecraft y Minesweeper', 'Cookie run kingdom ', 'Roblox, Minesweeper Dbd', 'Dead by daylight '],
     correct: 2,
   },
 ];
