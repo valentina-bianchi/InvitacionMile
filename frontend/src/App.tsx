@@ -7,6 +7,7 @@ import ConfirmationPage from './pages/ConfirmationPage';
 import ItinerarioPage from './pages/ItinerarioPage';
 import SpotifyPage from './pages/SpotifyPage';
 import QuizPage from './pages/QuizPage';
+import PhotosPage from './pages/PhotosPage';
 import FinalPage from './pages/FinalPage';
 import styles from './App.module.css';
 
@@ -25,6 +26,7 @@ function App() {
         <ItinerarioPage />
         <SpotifyPage />
         <QuizPage />
+        <PhotosPage />
         <FinalPage />
       </main>
     </div>

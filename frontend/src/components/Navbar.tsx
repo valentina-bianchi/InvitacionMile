@@ -24,6 +24,7 @@ const Navbar = () => {
     { label: '¿Cuánto conoces a Mile?', href: '#quiz-page' },
     { label: 'Itinerario', href: '#itinerario-page' },
     { label: 'Agregar canciones', href: '#spotify-page' },
+    { label: 'Subir fotos', href: '#photos-page' },
   ];
 
   return (

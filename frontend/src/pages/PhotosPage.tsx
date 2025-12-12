@@ -1,10 +1,10 @@
-import styles from './SpotifyPage.module.css';
+import styles from './PhotosPage.module.css';
 
-const SpotifyPage = () => {
-  const spotifyUrl = 'https://open.spotify.com/playlist/10qsRdLeYN9mZZP7CQmpN7?si=niZeg6iJRxWpVCXC5h1REg&pt=901b73f7bd03858247a88357da5ab9e7&pi=bE76f2CzTtKlF';
+const PhotosPage = () => {
+  const driveUrl = 'https://drive.google.com/drive/folders/17qfA43X4flG0T9U0OXj9ZSNAlgyMBe0m?usp=sharing';
 
   return (
-    <div className={styles.container} id="spotify-page">
+    <div className={styles.container} id="photos-page">
       <div className={styles.content}>
         {/* Decoración superior */}
         <div className={styles.starsTop}>
@@ -15,26 +15,26 @@ const SpotifyPage = () => {
 
         {/* Título */}
         <div className={styles.titleContainer}>
-          <h1 className={styles.title}>Agregá las canciones que te gustaría escuchar en mi fiesta</h1>
+          <h1 className={styles.title}>Compartí tus fotos del cumpleaños de Mile</h1>
         </div>
 
-        {/* Botón Spotify */}
+        {/* Botón Google Drive */}
         <div className={styles.buttonContainer}>
           <a
-            href={spotifyUrl}
+            href={driveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className={styles.spotifyButton}
+            className={styles.driveButton}
           >
             <svg
-              className={styles.spotifyIcon}
+              className={styles.driveIcon}
               viewBox="0 0 24 24"
               fill="white"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.84-.179-.84-.66 0-.36.24-.66.54-.78 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.242 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z" />
+              <path d="M7.71 4.29L3.29 8.71C2.9 9.1 2.9 9.73 3.29 10.12L10.12 16.95C10.51 17.34 11.14 17.34 11.53 16.95L20.71 7.77C21.1 7.38 21.1 6.75 20.71 6.36L16.29 1.94C15.9 1.55 15.27 1.55 14.88 1.94L7.71 4.29Z" />
             </svg>
-            <span className={styles.spotifyText}>IR A SPOTIFY</span>
+            <span className={styles.driveText}>SUBIR FOTOS</span>
           </a>
         </div>
 
@@ -47,7 +47,7 @@ const SpotifyPage = () => {
 
         {/* Flecha para siguiente página */}
         <div className={styles.arrowDown} onClick={() => {
-          const nextPage = document.getElementById('quiz-page');
+          const nextPage = document.getElementById('final-page');
           nextPage?.scrollIntoView({ behavior: 'smooth' });
         }}>
           <svg
@@ -68,5 +68,5 @@ const SpotifyPage = () => {
   );
 };
 
-export default SpotifyPage;
+export default PhotosPage;
 
